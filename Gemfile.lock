@@ -175,7 +175,6 @@ DEPENDENCIES
   jquery-rails
   mysql2
   rails (= 3.1.0)
-  rspec
   rspec-rails
   sass-rails (~> 3.1.0)
   spork

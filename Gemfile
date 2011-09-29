@@ -27,7 +27,7 @@ gem 'jquery-rails'
 group :development do
   gem 'annotate', '2.4.0'
   gem 'faker', '0.3.1'
-  gem 'rspec'
+  gem 'rspec-rails'
 end
 
 # Use unicorn as the web server
