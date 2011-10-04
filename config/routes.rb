@@ -5,7 +5,7 @@ LFS::Application.routes.draw do
   
   get "jamaats/jm" => 'jamaats#jm'
   
-  match '/show_jamaat/:id' => 'jamaats#show', :as => 's_j'
+  match '/jamaat/:id' => 'jamaats#show', :as => 's_j'
   match '/list_jamaatsmembers/:id' => 'jamaats#jm', :as => 'j_m'
   
   
