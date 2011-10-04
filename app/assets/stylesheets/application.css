@@ -41,3 +41,12 @@ a:hover {
 a:visited {
   color: #069;
 }
+
+/* Round corners */
+
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
