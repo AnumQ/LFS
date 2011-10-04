@@ -16,10 +16,16 @@
 </p>
 
 <p>
-  <b>Address:</b>
-  <%= @user.address %>
+  <b>Address:</b> <br/>
+  <%= @user.address_line1 %>, <%= @user.address_line2 %> <br/>
+  <%= @user.city %><br/>
+  <%= @user.postcode %>,
+  <%= @user.country %>
 </p>
 
+<p>
+	<b>Jamaat:</b>
+	<%= @user.jamaat_id %>
 <p>
   <b>Contact no:</b>
   <%= @user.contact_no %>

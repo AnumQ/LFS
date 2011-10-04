@@ -1,0 +1,21 @@
+<h1 id="">Jamaat <%= @jamaat.jamaat_name%></h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @jamaat.jamaat_name %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @jamaat.size %>
+</p>
+<p>
+	<b>Members:</b>
+	<%= link_to @jamaat.users.count, j_m_path(@jamaat) %>
+</p>
+
+
+<%= link_to 'Edit', edit_jamaat_path(@jamaat) %> |
+<%= link_to 'Back', jamaats_path %>

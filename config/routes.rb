@@ -1,6 +1,20 @@
 LFS::Application.routes.draw do
-  resources :users
+  get "dashboard/index"
 
+  resources :jamaats
+  
+  get "jamaats/jm" => 'jamaats#jm'
+  
+  match '/show_jamaat/:id' => 'jamaats#show', :as => 's_j'
+  match '/list_jamaatsmembers/:id' => 'jamaats#jm', :as => 'j_m'
+  
+  
+  resources :users
+  
+  
+  #ROOT path
+  root :to => 'dashboard#index'
+  #DASHBOARD index path
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

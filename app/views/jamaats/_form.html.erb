@@ -1,0 +1,25 @@
+<%= form_for(@jamaat) do |f| %>
+  <% if @jamaat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@jamaat.errors.count, "error") %> prohibited this jamaat from being saved:</h2>
+
+      <ul>
+      <% @jamaat.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :jamaat_name %><br />
+    <%= f.text_field :jamaat_name %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br />
+    <%= f.number_field :size %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

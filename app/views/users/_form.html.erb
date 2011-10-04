@@ -12,25 +12,44 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
     <%= f.label :AIMS_no %><br />
     <%= f.number_field :AIMS_no %>
   </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
   <div class="field">
     <%= f.label :address %><br />
-    <%= f.text_field :address %>
+    <%= f.text_field :address_line1 %> <br/>    
+    <%= f.text_field :address_line2 %> 
+  </div>
+  <div class="field">
+    <%= f.label :postcode %><br />
+    <%= f.text_field :postcode %> <br/>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %> <br/>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country %> <br/>
+  </div>
+  <div class="field">
+    <%= f.label :jamaat_id %><br />
+    <%= f.text_field :jamaat_id %>
   </div>
   <div class="field">
     <%= f.label :contact_no %><br />
     <%= f.number_field :contact_no %>
   </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

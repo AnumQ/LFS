@@ -24,7 +24,25 @@ describe UsersController do
   # User. As you add validations to User, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {
+       :AIMS_no => "44148",
+       :jamaat_name => "New Malden",
+       :name => "Anum Qudsia",
+       :email => "anumqudsia@hotmail.com",
+       :address_line1 => "19 Dunsfold House",
+       :address_line2 => "Kingstnympton Park",
+       :postcode => "KT2 7RT",
+       :city => "Kingston Upon Thames",
+       :country => "UK",
+       :contact_no => "07907819458"
+    }
+  end
+  
+  describe "GET 'index'" do
+    it "should be successful" do
+      get 'index'
+      response.should be_success
+    end
   end
 
   describe "GET index" do
@@ -32,6 +50,14 @@ describe UsersController do
       user = User.create! valid_attributes
       get :index
       assigns(:users).should eq([user])
+    end
+  end
+  
+  describe "GET 'show'" do
+    it "should be successful" do
+      user = User.create! valid_attributes
+      get :show, :id => user.id.to_s
+      response.should be_success
     end
   end
 
@@ -42,11 +68,26 @@ describe UsersController do
       assigns(:user).should eq(user)
     end
   end
+  
+  describe "GET 'new'" do
+    it "should be successful" do
+      get :new
+      response.should be_success
+    end
+  end
 
   describe "GET new" do
     it "assigns a new user as @user" do
       get :new
       assigns(:user).should be_a_new(User)
+    end
+  end
+  
+  describe "GET 'edit'" do
+    it "should be successful" do
+      user = User.create! valid_attributes
+      get :edit, :id => user.id.to_s
+      response.should be_success
     end
   end
 

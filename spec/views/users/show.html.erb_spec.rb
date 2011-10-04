@@ -5,6 +5,7 @@ describe "users/show.html.erb" do
     @user = assign(:user, stub_model(User,
       :name => "Name",
       :AIMS_no => 1,
+      :jamaat_id => 1,
       :email => "Email",
       :address => "Address",
       :contact_no => 1

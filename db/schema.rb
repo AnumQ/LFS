@@ -11,14 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110929082741) do
+ActiveRecord::Schema.define(:version => 20110929103217) do
+
+  create_table "jamaats", :force => true do |t|
+    t.string   "jamaat_name"
+    t.integer  "size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
     t.integer  "AIMS_no"
+    t.integer  "jamaat_id"
     t.string   "email"
-    t.string   "address"
-    t.integer  "contact_no"
+    t.string   "address_line1"
+    t.string   "address_line2"
+    t.string   "postcode"
+    t.string   "city"
+    t.string   "country"
+    t.string   "contact_no"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,30 @@
+<h1>Listing jamaats</h1>
+
+<table>
+  <tr>
+  	<th>ID</th>
+    <th>Name</th>
+    <th>Size</th>
+    <th>Members</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @jamaats.each do |jamaat| %>
+  <tr>
+  	<td><%= jamaat.id %></td>
+    <td><%= jamaat.jamaat_name %></td>
+    <td><%= jamaat.size %></td>
+    <td><%= link_to jamaat.users.count, j_m_path(jamaat) %> </td>
+    <td><%= link_to 'Show', jamaat %></td>
+    <td><%= link_to 'Edit', edit_jamaat_path(jamaat) %></td>
+    <td><%= link_to 'Destroy', jamaat, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<p><%= link_to 'New Jamaat', new_jamaat_path %></p>
+<p><%= link_to 'Back', root_path %></p>
