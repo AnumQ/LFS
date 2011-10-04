@@ -1,5 +1,9 @@
 .container {
+<<<<<<< HEAD
 	witdh: all;
+=======
+  width: 710px;
+>>>>>>> 6a3050f606aa7e373891fac5739f2e36214ce223
 }
 
 body {
@@ -23,7 +27,11 @@ section {
 }
 
 section h1 {
+<<<<<<< HEAD
   font-size: 150%;
+=======
+  font-size: 200%;
+>>>>>>> 6a3050f606aa7e373891fac5739f2e36214ce223
 }
 
 /* Links */
@@ -41,6 +49,7 @@ a:hover {
 a:visited {
   color: #069;
 }
+<<<<<<< HEAD
 
 /* Round corners */
 
@@ -85,3 +94,5 @@ nav ul li a:visited {
 nav ul li a:hover {
   text-decoration: underline;
 }
+=======
+>>>>>>> 6a3050f606aa7e373891fac5739f2e36214ce223
