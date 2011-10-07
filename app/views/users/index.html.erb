@@ -1,3 +1,4 @@
+<% if !User.find(:all).empty? %>
 <h1>Listing users</h1>
 
 <table>
@@ -13,6 +14,7 @@
     <th></th>
   </tr>
 
+
 <% @users.each do |user| %>
   <tr>
   	<td><%= user.AIMS_no %></td>
@@ -20,7 +22,7 @@
     <td><%= user.email %></td>
     <td><%= user.address_line1 %>, <%= user.address_line2 %> <br/> <%= user.city %><br/> <%= user.postcode %>,  <%= user.country %> </td>
     <td><%= user.contact_no %></td>
-    <td><%= link_to user.jamaat_id, s_j_path(user.jamaat_id) %></td>
+ <td><%= user.jamaat_id %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
@@ -32,4 +34,12 @@
 
 <p><%= link_to 'New User', new_user_path %><p>
 	
+
+
+<%else%>
+<h4>No members are registered. Click <%= link_to 'here', new_user_path %> to create a user.</h4>
+
+<% end %>
+
 <p><%= link_to 'Back', root_path %></p>
+

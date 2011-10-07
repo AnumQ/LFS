@@ -1,3 +1,4 @@
+<% if !Jamaat.find(:all).empty? %>
 <h1>Listing jamaats</h1>
 
 <table>
@@ -27,4 +28,9 @@
 <br />
 
 <p><%= link_to 'New Jamaat', new_jamaat_path %></p>
+
+<% else %>
+<h4>No Jamaats are registered. Click <%= link_to 'here', new_jamaat_path %> to create a jamaat.</h4>
+<% end %>
+
 <p><%= link_to 'Back', root_path %></p>

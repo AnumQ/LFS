@@ -6,10 +6,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
     <div class="container">
       <%= render 'layouts/header' %>
       <section class="round">
+ 		
+      <%= render 'layouts/errors'%> 
         <%= yield %>
+      
       </section><br/>
       
       <%= render 'layouts/footer' %>

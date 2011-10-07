@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20110929103217) do
     t.string   "city"
     t.string   "country"
     t.string   "contact_no"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

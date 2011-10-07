@@ -11,6 +11,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :city
       t.string :country
       t.string :contact_no
+      t.string :password_digest
 
       t.timestamps
     end
