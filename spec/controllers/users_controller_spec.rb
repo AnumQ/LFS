@@ -19,15 +19,17 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe UsersController do
+  render_views
 
   # This should return the minimal set of attributes required to create a valid
   # User. As you add validations to User, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
     {
-       :AIMS_no => "44148",
-       :jamaat_name => "New Malden",
+       :AIMS_no => "44148",       
        :name => "Anum Qudsia",
+       :jamaat_id => 1,
+       :password => "lfs44148",
        :email => "anumqudsia@hotmail.com",
        :address_line1 => "19 Dunsfold House",
        :address_line2 => "Kingstnympton Park",
@@ -35,6 +37,12 @@ describe UsersController do
        :city => "Kingston Upon Thames",
        :country => "UK",
        :contact_no => "07907819458"
+    }
+  end
+    def valid_attributes2
+    {
+      :jamaat_name => "New Malden",
+      :size => "126"
     }
   end
   
@@ -74,6 +82,11 @@ describe UsersController do
       get :new
       response.should be_success
     end
+    
+    it "should have the right title" do
+      get :new
+      response.should have_selector("title", :content => "Create a user")
+    end
   end
 
   describe "GET new" do
@@ -82,6 +95,13 @@ describe UsersController do
       assigns(:user).should be_a_new(User)
     end
   end
+
+  describe "User/Jamaat relationship" do
+    it "returns the correct jamaat for the user" do
+      user = User.create! valid_attributes
+      user.jamaat_id == 1
+    end
+  end 
   
   describe "GET 'edit'" do
     it "should be successful" do

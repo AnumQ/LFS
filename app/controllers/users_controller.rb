@@ -3,11 +3,14 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-
+    @jamaats = Jamaat.all
+    
     respond_to do |format|
       format.html # index.html.erb
+      format.json { render json: @jamaats }
       format.json { render json: @users }
     end
+
   end
 
   # GET /users/1
@@ -24,6 +27,7 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
+    @title = "Create a user"
     @user = User.new
 
     respond_to do |format|

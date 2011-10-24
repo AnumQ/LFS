@@ -22,7 +22,7 @@
     <td><%= user.email %></td>
     <td><%= user.address_line1 %>, <%= user.address_line2 %> <br/> <%= user.city %><br/> <%= user.postcode %>,  <%= user.country %> </td>
     <td><%= user.contact_no %></td>
- <td><%= user.jamaat_id %></td>
+    <td><%= link_to user.jamaat_id, jamaat_path(user.jamaat_id) %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>

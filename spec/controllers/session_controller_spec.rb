@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe SessionController do
+  render_views
    describe "GET 'new'" do
     it "should be successful" do
       get 'new'
@@ -8,7 +9,7 @@ describe SessionController do
     end
 
     it "should have the right title" do
-      get :new
+      get 'new'
       response.should have_selector("title", :content => "Login")
     end
   end
