@@ -5,7 +5,7 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'mysql2', :group => :development
 
 gem "acl9"
 gem 'foreigner'
@@ -53,4 +53,8 @@ group :test do
   gem 'test-unit'
   # Pretty printed test output
   gem 'turn', :require => false
+  
+  group :production do
+  gem 'therubyracer-heroku', '~> 0.8.1.pre3'
+  end
 end
