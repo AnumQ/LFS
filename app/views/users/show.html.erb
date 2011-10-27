@@ -17,10 +17,15 @@
 
 <p>
   <b>Address:</b> <br/>
+  <% if @user.address_line1.empty? && @user.address_line2.empty? &&
+  	@user.postcode.empty? && @user.country.empty? && @user.city.empty? %>
+  <i>No address provided</i>
+  <%else%>
   <%= @user.address_line1 %>, <%= @user.address_line2 %> <br/>
   <%= @user.city %><br/>
   <%= @user.postcode %>,
   <%= @user.country %>
+  <%end%>
 </p>
 
 <p>

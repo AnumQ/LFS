@@ -20,7 +20,15 @@
   	<td><%= user.AIMS_no %></td>
     <td><%= user.name %></td>
     <td><%= user.email %></td>
-    <td><%= user.address_line1 %>, <%= user.address_line2 %> <br/> <%= user.city %><br/> <%= user.postcode %>,  <%= user.country %> </td>
+	<td><% if user.address_line1.empty? && user.address_line2.empty? &&
+		user.postcode.empty? && user.country.empty? && user.city.empty? %> <i>No address provided</i> <%else%>
+		<%= user.address_line1 %>, <%= user.address_line2 %>
+		<br/>
+		<%= user.city %>
+		<br/>
+		<%= user.postcode %>,
+		<%= user.country %>
+		<%end%> </td>
     <td><%= user.contact_no %></td>
     <td><%= link_to user.jamaat_id, jamaat_path(user.jamaat_id) %></td>
     <td><%= link_to 'Show', user %></td>
