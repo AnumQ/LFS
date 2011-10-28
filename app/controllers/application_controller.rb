@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  force_ssl
   helper_method :current_user, :user_signed_in?, :user_signed_out?
  
   def current_user
@@ -8,6 +9,7 @@ class ApplicationController < ActionController::Base
     end
     @current_user
   end
+  
  
   def user_signed_in?
     !!current_user

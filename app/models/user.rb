@@ -2,13 +2,13 @@ class User < ActiveRecord::Base
   attr_accessor :updating_password
   
   attr_accessible :AIMS_no, :name, :jamaat_id, :email, :address_line1, :address_line2, :postcode, :city, :country, :contact_no, :password, :password_confirmation
-  has_secure_password
+  
   validates_presence_of :AIMS_no, :name, :email, :on => :create
   
   validates :AIMS_no, :uniqueness => true,
                       :length => {:minimum => 5, :maximum => 10}  
 
-  
+  has_secure_password
   validates_presence_of :password, :if => :should_validate_password?
   validates :password, :presence, :length => {:minimum => 6, :maximum => 40}, :confirmation => true, :if => :should_validate_password?                       
   
